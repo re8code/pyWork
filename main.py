@@ -1,22 +1,24 @@
-s1 = {1, 2, 3, 4, 5, 6}
-s2 = {4, 5, 6, 7, 8, 9}
+import array as ar
 
-# 교집합
-result = s1 & s2;                     print('1) s1 & s2 =', result)
-result = s1.intersection(s2);         print('2) s1 & s2 =', result)
+def info(no):
+    global s; print(f'{no}) set data:', s)
+
+s = set()
+
+s.add(1);   info(1)                    # integer
+s.add(2.3); info(2)                    # float
+# s.add(true)                          # bool       (X)
+# s.add([1, 2])                        # list       (X)
+s.add((1,2)); info(3)                  # tuple
+s.add('str'); info(4)                  # string
+# s.add(ar.array('i', [1, 2]))         # array      (X)
+# s.add({1:'a', 2:'b'})                # dictionary (X)
+s.add(range(2)); info(5)               # range
+# s.add({1,2})                         # set        (X)
+s.add((i for i in range(2))); info(6)  # generator
+s.add(map(int, [1, 2])); info(7)       # map
 print()
 
-# 합집합
-result = s1 | s2;                     print('3) s1 | s2 =', result)
-result = s1.union(s2);                print('4) s1 | s2 =', result)
-print()
-
-# 차집합
-result = s1 - s2;                     print('5) s1 - s2 =', result)
-result = s1.difference(s2);           print('6) s1 - s2 =', result)
-print()
-
-# 대칭차집합 = 합집합 - 교집합
-result = s1 ^ s2;                     print('7) s1 ^ s2 =', result)
-result = s1.symmetric_difference(s2); print('8) s1 ^ s2 =', result)
-resunt = s1 | s2 - s1 & s2;           print('9) s1 ^ s2 =', result)
+index = 1
+for v in s:
+    print(f'{index}) type:', type(v)); index += 1
