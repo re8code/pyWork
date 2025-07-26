@@ -1,23 +1,20 @@
-s = set()
-s.add((1, 2, 3, 4, 5))
-s.add('build')
-s.add(range(9,0,-2))
+def info (no, v):
+    print (f'{no}) value = {v}')
 
-idx = 1
-for r in s:
-    print(f'{idx})', end=' ')
-    for c in range(len(r)): print(r[c], end=' ')
-    print(type(r))
-    idx += 1
-s.clear()
-print('------------------------------')
+def delegator (f, no, a):  # delegator: 위임자
+    print('>>>>> delegator call')
+    f (no, a)
 
-l = []
-l.append({1, 2, 3, 4, 5})
-l.append(set([2, 3, 4, 5, 6]))
-l.append({v for v in range(3, 8)})
+info (1, 10)
 
-for r in range(3):
-    print(f'{r+1})', end=' ')
-    for c in l[r]: print(c, end=' ')
-    print(type(l[r]))
+# function pointer shallow copy
+p = info
+p (2, 20); print()
+
+# shallow copy pointer
+print (f'3) pointer: {id(p)}, {id(info)}')
+print (f'4) pointer: {type(p)}, {type(info)}'); print()
+
+# delegation
+delegator (p, 5, 30)
+delegator (info, 6, 40)
