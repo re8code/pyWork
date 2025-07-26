@@ -1,20 +1,13 @@
-def info (no, v):
-    print (f'{no}) value = {v}')
+def add (a, b): return a + b
+def sub (a, b): return a - b
+def mul (a, b): return a * b
+def div (a, b): return a / b
+def rem (a, b): return a % b
 
-def delegator (f, no, a):  # delegator: 위임자
-    print('>>>>> delegator call')
-    f (no, a)
+op = ['+', '-', 'x', '/', '%']  # list: operator string
 
-info (1, 10)
+func = add, sub, mul, div, rem  # tuple: function pointer
 
-# function pointer shallow copy
-p = info
-p (2, 20); print()
-
-# shallow copy pointer
-print (f'3) pointer: {id(p)}, {id(info)}')
-print (f'4) pointer: {type(p)}, {type(info)}'); print()
-
-# delegation
-delegator (p, 5, 30)
-delegator (info, 6, 40)
+a, b = 70, 30
+for i in range(5):
+    print (f'{i+1}) {a} {op[i]} {b} = {func[i](a, b)}')
