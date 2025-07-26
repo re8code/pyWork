@@ -1,24 +1,24 @@
 import array as ar
 
-def info(no):
-    global s; print(f'{no}) set data:', s)
+d = {}
 
-s = set()
+# Available as Dictionary Key
+# : integer, float, tuple, string, range, generator, map
 
-s.add(1);   info(1)                    # integer
-s.add(2.3); info(2)                    # float
-# s.add(true)                          # bool       (X)
-# s.add([1, 2])                        # list       (X)
-s.add((1,2)); info(3)                  # tuple
-s.add('str'); info(4)                  # string
-# s.add(ar.array('i', [1, 2]))         # array      (X)
-# s.add({1:'a', 2:'b'})                # dictionary (X)
-s.add(range(2)); info(5)               # range
-# s.add({1,2})                         # set        (X)
-s.add((i for i in range(2))); info(6)  # generator
-s.add(map(int, [1, 2])); info(7)       # map
-print()
+d[0] = 1                              # integer
+d[1.0] = 2                            # float
+# d[true] = 'error'                   # boolean     (X)
+# d[[1,2]] = 'error'                  # list        (X)
+d[2,] = 3                             # tuple
+d['str'] = 4                          # string
+# d[ar.array('i', [1, 2])] = 'error'  # array       (X)
+# d[{1:'a', 2:'b'}] = 'error'         # dictionary  (X)
+d[range(2)] = 5                       # range
+# d[{1,2}] = 'error'                  # set         (X)
+d[(i for i in range(2))] = 6          # generator
+d[map(int, [1,2])] = 7                # map
 
-index = 1
-for v in s:
-    print(f'{index}) type:', type(v)); index += 1
+idx = 1
+for k in d.keys():
+    print(f'{idx}) key type: {type(k)}')
+    idx += 1
