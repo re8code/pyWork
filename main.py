@@ -1,14 +1,16 @@
-def delegator(n, m, op):
-    if   op == 0: return (lambda a, b: a + b)(n, m)
-    elif op == 1: return (lambda a, b: a - b)(n, m)
-    elif op == 2: return (lambda a, b: a * b)(n, m)
-    elif op == 3: return (lambda a, b: a / b)(n, m)
-    else:         return (lambda a, b: a % b)(n, m)
+data = '0 1 2 3 4'
+print(f'1) {type(data)} :', data)
 
-a, b = 70, 30
+s = data.split()
+print(f'2) {type(s)}:', s)
 
-print(f'1) {a} + {b} = {delegator(a, b, 0):4d}')
-print(f'2) {a} - {b} = {delegator(a, b, 1):4d}')
-print(f'3) {a} x {b} = {delegator(a, b, 2):4d}')
-print(f'4) {a} / {b} = {delegator(a, b, 3):.2f}')
-print(f'5) {a} % {b} = {delegator(a, b, 4):4d}')
+s = map(int, s)
+print(f'3) {type(s)} :', s, ', sum:', sum(s))
+
+s = list(s)
+print(f'4) {type(s)}:',  s, ', sum:', sum(s))
+
+s = map(lambda x: int(x)+1, data.split())
+l = list(s)
+print(f'5) {type(s)} :', s, ', sum:', sum(s))
+print(f'6) {type(l)}:',  l, ', sum:', sum(l))
