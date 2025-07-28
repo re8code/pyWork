@@ -1,13 +1,15 @@
-def add (a, b): return a + b
-def sub (a, b): return a - b
-def mul (a, b): return a * b
-def div (a, b): return a / b
-def rem (a, b): return a % b
+n, m = 70, 30
 
-op = ['+', '-', 'x', '/', '%']  # list: operator string
+add = lambda a, b: a + b
+print(f'1) {n} + {m} = {add(n, m):4d}', type(add))
 
-func = add, sub, mul, div, rem  # tuple: function pointer
+sub = lambda a, b: a - b
+print(f'2) {n} - {m} = {sub(n, m):4d}', type(sub))
 
-a, b = 70, 30
-for i in range(5):
-    print (f'{i+1}) {a} {op[i]} {b} = {func[i](a, b)}')
+print(f'3) {n} x {m} = {(lambda a, b: a * b)(n, m):4d}')
+print(f'4) {n} / {m} = {(lambda a, b: a / b)(n, m):.2f}')
+
+def rem(a, b):
+    return a % b
+
+print(f'5) {n} % {m} = {rem(n, m):4d}', type(rem))
