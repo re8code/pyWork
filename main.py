@@ -1,16 +1,18 @@
-data = '0 1 2 3 4'
-print(f'1) {type(data)} :', data)
+op = []
+op.append(lambda a, b: a + b)
+op.append(lambda a, b: a - b)
+op.append(lambda a, b: a * b)
+op.append(lambda a, b: a / b)
+op.append(lambda a, b: a % b)
 
-s = data.split()
-print(f'2) {type(s)}:', s)
+index = 0
+n, m = 70, 30
+for i in range(5):
+    index += 1
+    print(f'{index}) operation result: {op[i](n, m)}')
 
-s = map(int, s)
-print(f'3) {type(s)} :', s, ', sum:', sum(s))
+print('vs'); index = 1
 
-s = list(s)
-print(f'4) {type(s)}:',  s, ', sum:', sum(s))
-
-s = map(lambda x: int(x)+1, data.split())
-l = list(s)
-print(f'5) {type(s)} :', s, ', sum:', sum(s))
-print(f'6) {type(l)}:',  l, ', sum:', sum(l))
+for func in op:
+    print(f'{index}) operation result: {func(n, m)}')
+    index += 1
