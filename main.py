@@ -8,7 +8,7 @@ abbcccdddd\
 "
 
 pattern = r"the"
-res = re.findall(pattern, str)
+res = re.findall(pattern, str, re.I)
 
 print(f'1) result type : {type(res)}')
 print(f'2) result size : {len(res)}')
