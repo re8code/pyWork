@@ -7,12 +7,8 @@ The quick brown fox jumps over the lazy dog.\n\
 abbcccdddd\
 "
 
-pattern = r"\.$"
-res = re.findall(pattern, str)
-print(f'1) result      : {res}')
-print()
-
-res = re.findall(pattern, str, re.M)
-print(f'2) result type : {type(res)}')
-print(f'3) result size : {len(res)}')
-print(f'4) result      : {res}')
+print(f'1) result      : {re.findall(r'^the', str)}')
+print(f'2) result      : {re.findall(r'^the', str, re.M)}')
+print(f'3) result      : {re.findall(r'^the', str, re.M|re.I)}')
+print(f'4) result      : {re.findall(r'com$', str, re.M)}')
+print(f'5) result      : {re.findall(r'fox|dog', str)}')
