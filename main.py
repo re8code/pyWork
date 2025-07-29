@@ -1,18 +1,17 @@
-op = []
-op.append(lambda a, b: a + b)
-op.append(lambda a, b: a - b)
-op.append(lambda a, b: a * b)
-op.append(lambda a, b: a / b)
-op.append(lambda a, b: a % b)
+import re
 
-index = 0
-n, m = 70, 30
-for i in range(5):
-    index += 1
-    print(f'{index}) operation result: {op[i](n, m)}')
+str = "010-1234-5678\n\
+thesecon@gmail.com\n\
+https://www.gildong.com/?p1=1412&p2=alskqwer\n\
+The quick brown fox jumps over the lazy dog.\n\
+abbcccdddd\
+"
 
-print('vs'); index = 1
+pattern = r"the"
+res = re.search(pattern, str)
 
-for func in op:
-    print(f'{index}) operation result: {func(n, m)}')
-    index += 1
+print(f'1) result type : {type(res)}')
+print(f'2) result      :', res)
+print(f'3) res[0]      :', res[0])
+print(f'4) res.group() :', res.group())
+print(f'5) res.group(0):', res.group(0))
