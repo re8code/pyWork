@@ -8,11 +8,6 @@ abbcccdddd, hippy.\n\
 http://www.naver.com\
 "
 
-# meta character, \s
-result = re.findall(r'\s', str)
-print(f'1) count: {len(result)}')
-print(result, end='\n\n')
-
-result = re.findall(r'[ \t\n\r]', str)
-print(f'2) count: {len(result)}')
-print(result)
+print(f'1) result: {re.findall(r'b{2}', str)}')
+print(f'2) result: {re.findall(r'c{1,3}', str)}')
+print(f'3) result: {re.findall(r'd{1,}', str)}')
