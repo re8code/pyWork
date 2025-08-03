@@ -8,8 +8,5 @@ abbcccdddd, hippy.\n\
 http://www.naver.com\
 "
 
-print(f'1) result      : {re.findall(r'h..p', str)}')
-print(f'2) result      : {re.findall(r'https?', str)}')
-print(f'3) result      : {re.findall(r'dd*', str)}')
-print(f'4) result      : {re.findall(r'b+', str)}')
-
+print(f'1) result: {re.findall(r'[abc]', str)}')
+print(f'2) result: {re.findall(r'[0-9A-Z]', str)}')
