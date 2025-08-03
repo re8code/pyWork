@@ -9,10 +9,10 @@ http://www.naver.com\
 "
 
 # meta character, \d
-result = re.findall(r'\w', str)
+result = re.findall(r'\d', str)
 print(f'1) count: {len(result)}')
 print(result, end='\n\n')
 
-result = re.findall(r'[0-9a-zA-Z_]', str)
+result = re.findall(r'[0-9]', str)
 print(f'2) count: {len(result)}')
 print(result)
