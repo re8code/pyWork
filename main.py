@@ -8,5 +8,6 @@ abbcccdddd, hippy.\n\
 http://www.naver.com\
 "
 
-print(f'1) result: {re.findall(r'[abc]', str)}')
-print(f'2) result: {re.findall(r'[0-9A-Z]', str)}')
+print(f'1) result: {re.findall(r'[a-z]', str)}')
+print()
+print(f'2) result: {re.findall(r'[^a-z]', str)}')
