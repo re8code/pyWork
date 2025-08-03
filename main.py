@@ -8,6 +8,10 @@ abbcccdddd, hippy.\n\
 http://www.naver.com\
 "
 
-print(f'1) result: {re.findall(r'b{2}', str)}')
-print(f'2) result: {re.findall(r'c{1,3}', str)}')
-print(f'3) result: {re.findall(r'd{1,}', str)}')
+result = re.findall(r'\w{3,5}', str)
+print(f'1) count: {len(result)}')
+print(result, end='\n\n')
+
+result = re.findall(r'\b\w{3,}\b', str)
+print(f'2) count: {len(result)}')
+print(result)
