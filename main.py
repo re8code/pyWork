@@ -8,10 +8,14 @@ abbcccdddd, hippy.\n\
 http://www.naver.com\
 "
 
-result = re.findall(r'\w{3,5}', str)
+result = re.findall(r'the', str)
 print(f'1) count: {len(result)}')
 print(result, end='\n\n')
 
-result = re.findall(r'\b\w{3,}\b', str)
+result = re.findall(r'[the]', str)
 print(f'2) count: {len(result)}')
-print(result)
+print(result, end='\n\n')
+
+result = re.findall(r'(the)', str)
+print(f'3) count: {len(result)}')
+print(result, end='\n\n')
