@@ -9,6 +9,10 @@ http://www.naver.com\
 "
 
 # meta character, \d
-print(f'1) result: {re.findall(r'\d', str)}')
-print('vs')
-print(f'2) result: {re.findall(r'[0-9]', str)}')
+result = re.findall(r'\w', str)
+print(f'1) count: {len(result)}')
+print(result, end='\n\n')
+
+result = re.findall(r'[0-9a-zA-Z_]', str)
+print(f'2) count: {len(result)}')
+print(result)
