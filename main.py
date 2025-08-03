@@ -8,6 +8,7 @@ abbcccdddd, hippy.\n\
 http://www.naver.com\
 "
 
-print(f'1) result: {re.findall(r'[a-z]', str)}')
-print()
-print(f'2) result: {re.findall(r'[^a-z]', str)}')
+# meta character, \d
+print(f'1) result: {re.findall(r'\d', str)}')
+print('vs')
+print(f'2) result: {re.findall(r'[0-9]', str)}')
