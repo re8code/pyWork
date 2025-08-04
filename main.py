@@ -8,14 +8,8 @@ abbcccdddd, hippy.\n\
 http://www.naver.com\
 "
 
-result = re.findall(r'the', str)
-print(f'1) count: {len(result)}')
-print(result, end='\n\n')
+result = re.findall(r'(bb|ww|\/\/)', str)
+print(f'1) result: {result}')
 
-result = re.findall(r'[the]', str)
-print(f'2) count: {len(result)}')
-print(result, end='\n\n')
-
-result = re.findall(r'(the)', str)
-print(f'3) count: {len(result)}')
-print(result, end='\n\n')
+result = re.findall(r'\b\w{2,}\.\w{3,}\.\w{2,}\b', str)
+print(f'2) result: {result}')
